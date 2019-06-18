@@ -59,4 +59,8 @@ Now you can use both your original query and this much shorter one:
 
     api/controller/action?n=1&n=2&n=3&n=4&n=5&n=6&n=7&n=8&n=9&n=10
     
-Done.
+Look at the ExampleApp in the `test/` folder to see a full example of an application using alias model binding.
+    
+## compatiblity
+
+The web package has a dependancy on *Microsoft.AspNetCore.Mvc.Core* version 2.2.5 (not the abstractions package *Microsoft.AspNetCore.Mvc.Abstractions*), and so is only compatible with web projects using a version of *Microsoft.AspNetCore.Mvc.Core* that's binary compatible with 2.2.5.
