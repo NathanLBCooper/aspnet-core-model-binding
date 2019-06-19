@@ -1,0 +1,11 @@
+version: 0.1.{build}
+environment:
+  nuget_source: https://www.nuget.org/api/v2/package
+  nuget_api_key:
+    secure: bOxcOvdLJxIQqjTrUm7YfaSxMRWtUyRFr5bvgnXs29aHQLaHW2NvGPtvfu7Ili/3
+build_script:
+- ps: .\build.ps1 -build_number $env:APPVEYOR_BUILD_NUMBER -branch $env:APPVEYOR_REPO_BRANCH
+artifacts:
+- path: .\build\nupkgs\*
+deploy_script:
+- ps: .\deploy.ps1 -nuget_source $env:nuget_source -nuget_api_key $env:nuget_api_key

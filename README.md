@@ -1,5 +1,7 @@
 # alias-model-binder
 
+[![Build status](https://ci.appveyor.com/api/projects/status/im76pxbt2kk793o0?svg=true)](https://ci.appveyor.com/project/NathanLBCooper/alias-model-binder)
+
 An asp.net core model binder for allowing alternative (typically shortened) property names on request models.
 
 To briefly describe how this works, it basically takes the place of the default `ComplexTypeModelBinder`, but expands the fields it's looking for to include names defined in a special property attribute.
