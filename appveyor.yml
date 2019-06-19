@@ -9,3 +9,8 @@ artifacts:
 - path: .\build\nupkgs\*
 deploy_script:
 - ps: .\deploy.ps1 -nuget_source $env:nuget_source -nuget_api_key $env:nuget_api_key
+skip_commits:
+  files:
+    - '**/*.md'
+    - LICENSE
+    - '.gitignore'
