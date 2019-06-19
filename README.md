@@ -1,6 +1,7 @@
 # alias-model-binder
 
 [![Build status](https://ci.appveyor.com/api/projects/status/im76pxbt2kk793o0?svg=true)](https://ci.appveyor.com/project/NathanLBCooper/alias-model-binder)
+![GitHub](https://img.shields.io/github/license/NathanLBCooper/alias-model-binder.svg)
 
 | Package | Version |
 | --- | --- |
