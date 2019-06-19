@@ -2,6 +2,12 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/im76pxbt2kk793o0?svg=true)](https://ci.appveyor.com/project/NathanLBCooper/alias-model-binder)
 
+| Package | Version |
+| --- | --- |
+| **Client** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Web.svg)](https://www.nuget.org/packages/AliasModelBinder.Web/) |
+| **Web** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Client.svg)](https://www.nuget.org/packages/AliasModelBinder.Client/) |
+
+
 An asp.net core model binder for allowing alternative (typically shortened) property names on request models.
 
 To briefly describe how this works, it basically takes the place of the default `ComplexTypeModelBinder`, but expands the fields it's looking for to include names defined in a special property attribute.
@@ -32,7 +38,7 @@ Well, yeah. Of course there is a way. That's why you're reading this.
 
 ## using the model binder
 
-Just add **todo publish client package** to where you define your request objects, and **todo publish web package** to your web project.
+Just add [the client package](https://www.nuget.org/packages/AliasModelBinder.Client/) to where you define your request objects, and [the web package](https://www.nuget.org/packages/AliasModelBinder.Web/) to your web project.
 
 Then simply add an attribute to your request class
 
