@@ -1,5 +1,4 @@
 # alias-model-binder
-
 [![Build status](https://ci.appveyor.com/api/projects/status/im76pxbt2kk793o0?svg=true)](https://ci.appveyor.com/project/NathanLBCooper/alias-model-binder)
 ![GitHub](https://img.shields.io/github/license/NathanLBCooper/alias-model-binder.svg)
 
@@ -8,12 +7,21 @@
 | **Client** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Web.svg)](https://www.nuget.org/packages/AliasModelBinder.Web/) |
 | **Web** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Client.svg)](https://www.nuget.org/packages/AliasModelBinder.Client/) |
 
+![alias-model-binder](https://i.imgur.com/yrErlSX.png)
 
-An asp.net core model binder for allowing alternative (typically shortened) property names on request models.
+**A model binder for ASP.NET Core. Use alternative, shorter property names in your query strings.**
 
-To briefly describe how this works, it basically takes the place of the default `ComplexTypeModelBinder`, but expands the fields it's looking for to include names defined in a special property attribute.
+**Turn**
 
-## is this model binder for you?
+`api/controller/action?SomePrettyLongPropertyName=1&SomePrettyLongPropertyName=2&SomePrettyLongPropertyName=3&SomePrettyLongPropertyName=4&SomePrettyLongPropertyName=5&SomePrettyLongPropertyName=6&SomePrettyLongPropertyName=7&SomePrettyLongPropertyName=8&SomePrettyLongPropertyName=9&SomePrettyLongPropertyName=10&SomePrettyLongPropertyName=11&SomePrettyLongPropertyName=12&SomePrettyLongPropertyName=13&SomePrettyLongPropertyName=14&SomePrettyLongPropertyName=15`
+
+**into**
+
+`api/controller/action?n=1&n=2&n=3&n=4&n=5&n=6&n=7&n=8&n=9&n=10&n=11&n=12&n=13&n=14&n=15`
+
+**without changing anything in your code or sacrificing readability**
+
+## is this the problem you're having?
 
 **Are your query strings too long and do you wish that you could have shortened names just for these query strings without having to change the names of your actual properties?**
 
@@ -28,18 +36,27 @@ Seems pretty normal, it even has a reasonably property name. But when passing co
     
     api/controller/action?SomeNumbers=1&SomeNumbers=2&SomeNumbers=3&SomeNumbers=4&SomeNumbers=5&SomeNumbers=6&SomeNumbers=7&SomeNumbers=8&SomeNumbers=9&SomeNumbers=10
 
-**This query string is long. It's not even got that much data in it, and a lot of that length is the property name. The longer that name gets, or the more data we pass, the worse it gets.**
+That's pretty long.
 
-You might have a limit on query string sizes, or you may just find these long strings clumsy. You've chosen to stick with using HttpGet and a query string, **but you need these query strings to be shorter**.
+There are many reasons that's a bad thing. It may be that you have a query string limit, or maybe it's just because it's clumsy and repetitive.
 
-We could rename `SomeNumbers` to something shorter like `n`. But the cost of that is less readable code. Actually it's worse than that: less readable code in the public contact to your service. If only there was a way to have the short name for the query string, and the long name for the people reading your code. 
+We could rename `SomeNumbers` to something shorter like `n`. But the cost of that is less readable code. Actually it's worse than that: less readable code in the public contact to your service.
 
-Well, yeah. Of course there is a way. That's why you're reading this.
+If only there was some way to get shorten these query strings without changing my model. Well, there is. That's what Alias Model Binder is for.
 
+### or maybe you have another problem Alias Model Binder solves:
+
+It's not just for query string shortening. It's just the most obvious, and the problem I was dealing with when I created it. You can use it for anything where it's useful to have multiple names for the properties of a request object. Here are some examples that spring to mind:
+
+- making backwards compatible name changes
+- api translation
+- ...
 
 ## using the model binder
 
 Just add [the client package](https://www.nuget.org/packages/AliasModelBinder.Client/) to where you define your request objects, and [the web package](https://www.nuget.org/packages/AliasModelBinder.Web/) to your web project.
+
+(*These two packages are seperate, because I don't want to force your client libraries to depend on ASP.NET*)
 
 Then simply add an attribute to your request class
 
