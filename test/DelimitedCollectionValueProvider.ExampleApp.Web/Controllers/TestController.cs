@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DelimitedCollectionValueProvider.ExampleApp.Web.Controllers
 {
@@ -28,6 +29,18 @@ namespace DelimitedCollectionValueProvider.ExampleApp.Web.Controllers
             }
 
             return request.Integers;
+        }
+
+        [HttpGet]
+        [Route("echoMultipleCollections")]
+        public ActionResult<int[]> EchoMultipleCollections([FromQuery] EchoMultipleCollectionsRequest request)
+        {
+            if (request?.One == null || request?.Two == null || request?.Three == null)
+            {
+                return base.BadRequest();
+            }
+
+            return request.One.Concat(request.Two).Concat(request.Three).ToArray();
         }
     }
 }

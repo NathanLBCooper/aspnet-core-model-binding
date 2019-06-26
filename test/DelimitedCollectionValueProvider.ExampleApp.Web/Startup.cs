@@ -20,9 +20,10 @@ namespace DelimitedCollectionValueProvider.ExampleApp.Web
             services
                 .AddMvc()
                 .AddMvcOptions(options =>
-                {
-                    // todo
-                })
+                    {
+                        DelimitingQueryStringValueProviderFactory.Configure(options.ValueProviderFactories,
+                            ',');
+                    })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
