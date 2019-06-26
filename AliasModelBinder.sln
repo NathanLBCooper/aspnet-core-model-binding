@@ -3,19 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliasModelBinder.Web", "src\AliasModelBinder.Web\AliasModelBinder.Web.csproj", "{E105003D-128C-4BBA-B27C-C103AC79D0BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AliasModelBinder.Web", "src\AliasModelBinder.Web\AliasModelBinder.Web.csproj", "{E105003D-128C-4BBA-B27C-C103AC79D0BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliasModelBinder.Client", "src\AliasModelBinder.Client\AliasModelBinder.Client.csproj", "{87CD62CD-B11C-4682-B71D-85BAA525C3CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AliasModelBinder.Client", "src\AliasModelBinder.Client\AliasModelBinder.Client.csproj", "{87CD62CD-B11C-4682-B71D-85BAA525C3CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{00488322-C308-4FCB-941C-CA2188E55992}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9C9BBEEF-8DA3-4CAA-9F1C-5D0199F8913B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliasModelBinder.IntegrationTests", "test\AliasModelBinder.IntegrationTests\AliasModelBinder.IntegrationTests.csproj", "{C3BAC7AF-04B7-4D0B-B55F-C957DC383A2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AliasModelBinder.IntegrationTests", "test\AliasModelBinder.IntegrationTests\AliasModelBinder.IntegrationTests.csproj", "{C3BAC7AF-04B7-4D0B-B55F-C957DC383A2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliasModelBinder.ExampleApp.Web", "test\AliasModelBinder.ExampleApp.Web\AliasModelBinder.ExampleApp.Web.csproj", "{572A3821-49FF-451F-8F19-68720B3DED7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AliasModelBinder.ExampleApp.Web", "test\AliasModelBinder.ExampleApp.Web\AliasModelBinder.ExampleApp.Web.csproj", "{572A3821-49FF-451F-8F19-68720B3DED7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliasModelBinder.ExampleApp.Client", "test\AliasModelBinder.ExampleApp.Client\AliasModelBinder.ExampleApp.Client.csproj", "{23A2265C-3CB9-41C8-A4AD-22750C7B039A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AliasModelBinder.ExampleApp.Client", "test\AliasModelBinder.ExampleApp.Client\AliasModelBinder.ExampleApp.Client.csproj", "{23A2265C-3CB9-41C8-A4AD-22750C7B039A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelimitedCollectionValueProvider", "src\DelimitedCollectionValueProvider\DelimitedCollectionValueProvider.csproj", "{993BA44A-EDF5-4214-BEEF-859CA1D39D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelimitedCollectionValueProvider.ExampleApp.Web", "test\DelimitedCollectionValueProvider.ExampleApp.Web\DelimitedCollectionValueProvider.ExampleApp.Web.csproj", "{2B794075-9C86-4887-95B6-E002C8E2AE25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelimitedCollectionValueProvider.IntegrationTests", "test\DelimitedCollectionValueProvider.IntegrationTests\DelimitedCollectionValueProvider.IntegrationTests.csproj", "{0EF91759-A0D5-4552-80FC-BF4B486F3370}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +49,18 @@ Global
 		{23A2265C-3CB9-41C8-A4AD-22750C7B039A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23A2265C-3CB9-41C8-A4AD-22750C7B039A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23A2265C-3CB9-41C8-A4AD-22750C7B039A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993BA44A-EDF5-4214-BEEF-859CA1D39D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993BA44A-EDF5-4214-BEEF-859CA1D39D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993BA44A-EDF5-4214-BEEF-859CA1D39D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993BA44A-EDF5-4214-BEEF-859CA1D39D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B794075-9C86-4887-95B6-E002C8E2AE25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B794075-9C86-4887-95B6-E002C8E2AE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B794075-9C86-4887-95B6-E002C8E2AE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B794075-9C86-4887-95B6-E002C8E2AE25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF91759-A0D5-4552-80FC-BF4B486F3370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF91759-A0D5-4552-80FC-BF4B486F3370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF91759-A0D5-4552-80FC-BF4B486F3370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF91759-A0D5-4552-80FC-BF4B486F3370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +71,9 @@ Global
 		{C3BAC7AF-04B7-4D0B-B55F-C957DC383A2D} = {9C9BBEEF-8DA3-4CAA-9F1C-5D0199F8913B}
 		{572A3821-49FF-451F-8F19-68720B3DED7F} = {9C9BBEEF-8DA3-4CAA-9F1C-5D0199F8913B}
 		{23A2265C-3CB9-41C8-A4AD-22750C7B039A} = {9C9BBEEF-8DA3-4CAA-9F1C-5D0199F8913B}
+		{993BA44A-EDF5-4214-BEEF-859CA1D39D8B} = {00488322-C308-4FCB-941C-CA2188E55992}
+		{2B794075-9C86-4887-95B6-E002C8E2AE25} = {9C9BBEEF-8DA3-4CAA-9F1C-5D0199F8913B}
+		{0EF91759-A0D5-4552-80FC-BF4B486F3370} = {9C9BBEEF-8DA3-4CAA-9F1C-5D0199F8913B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {94E687F6-6D88-40E5-B525-A4E556B42FED}
