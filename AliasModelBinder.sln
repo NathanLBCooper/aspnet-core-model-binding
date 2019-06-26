@@ -17,11 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AliasModelBinder.ExampleApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AliasModelBinder.ExampleApp.Client", "test\AliasModelBinder.ExampleApp.Client\AliasModelBinder.ExampleApp.Client.csproj", "{23A2265C-3CB9-41C8-A4AD-22750C7B039A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelimitedCollectionValueProvider", "src\DelimitedCollectionValueProvider\DelimitedCollectionValueProvider.csproj", "{993BA44A-EDF5-4214-BEEF-859CA1D39D8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelimitingQueryStringValueProvider.Web", "src\DelimitingQueryStringValueProvider.Web\DelimitingQueryStringValueProvider.Web.csproj", "{993BA44A-EDF5-4214-BEEF-859CA1D39D8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelimitedCollectionValueProvider.ExampleApp.Web", "test\DelimitedCollectionValueProvider.ExampleApp.Web\DelimitedCollectionValueProvider.ExampleApp.Web.csproj", "{2B794075-9C86-4887-95B6-E002C8E2AE25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelimitingQueryStringValueProvider.ExampleApp.Web", "test\DelimitingQueryStringValueProvider.ExampleApp.Web\DelimitingQueryStringValueProvider.ExampleApp.Web.csproj", "{2B794075-9C86-4887-95B6-E002C8E2AE25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelimitedCollectionValueProvider.IntegrationTests", "test\DelimitedCollectionValueProvider.IntegrationTests\DelimitedCollectionValueProvider.IntegrationTests.csproj", "{0EF91759-A0D5-4552-80FC-BF4B486F3370}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelimitingQueryStringValueProvider.IntegrationTests", "test\DelimitingQueryStringValueProvider.IntegrationTests\DelimitingQueryStringValueProvider.IntegrationTests.csproj", "{0EF91759-A0D5-4552-80FC-BF4B486F3370}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using DelimitingQueryStringValueProvider.Web;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DelimitedCollectionValueProvider.ExampleApp.Web
+namespace DelimitingQueryStringValueProvider.ExampleApp.Web
 {
     public class Startup
     {

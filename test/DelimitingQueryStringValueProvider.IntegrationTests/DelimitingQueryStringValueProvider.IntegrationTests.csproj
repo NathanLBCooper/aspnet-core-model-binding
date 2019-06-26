@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DelimitedCollectionValueProvider.ExampleApp.Web\DelimitedCollectionValueProvider.ExampleApp.Web.csproj" />
+    <ProjectReference Include="..\DelimitingQueryStringValueProvider.ExampleApp.Web\DelimitingQueryStringValueProvider.ExampleApp.Web.csproj" />
   </ItemGroup>
 
 </Project>

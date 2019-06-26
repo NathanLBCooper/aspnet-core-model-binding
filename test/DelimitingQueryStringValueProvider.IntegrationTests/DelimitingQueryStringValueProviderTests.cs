@@ -1,19 +1,18 @@
-using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Xunit;
 
-namespace DelimitedCollectionValueProvider.IntegrationTests
+namespace DelimitingQueryStringValueProvider.IntegrationTests
 {
-    public class DelimitedCollectionsTests : IntegrationClassFixture
+    public class DelimitingQueryStringValueProviderTests : IntegrationClassFixture
     {
         private const char Delimiter = ',';
 
         private readonly HttpClient _client;
 
-        public DelimitedCollectionsTests(IntegrationTestFixture fixture)
+        public DelimitingQueryStringValueProviderTests(IntegrationTestFixture fixture)
         {
             this._client = fixture.Client;
         }

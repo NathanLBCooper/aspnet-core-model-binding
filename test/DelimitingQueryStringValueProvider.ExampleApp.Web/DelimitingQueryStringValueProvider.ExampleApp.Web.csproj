@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DelimitedCollectionValueProvider\DelimitedCollectionValueProvider.csproj" />
+    <ProjectReference Include="..\..\src\DelimitingQueryStringValueProvider.Web\DelimitingQueryStringValueProvider.Web.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace DelimitedCollectionValueProvider.ExampleApp.Web
+namespace DelimitingQueryStringValueProvider.ExampleApp.Web
 {
     public class Program
     {

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DelimitedCollectionValueProvider.ExampleApp.Web.Controllers
+namespace DelimitingQueryStringValueProvider.ExampleApp.Web.Controllers
 {
     [Route("test")]
     [ApiController]

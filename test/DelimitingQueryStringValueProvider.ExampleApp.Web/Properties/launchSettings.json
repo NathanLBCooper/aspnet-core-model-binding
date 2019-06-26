@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "DelimitedCollectionValueProvider.ExampleApp.Web": {
+    "DelimitingQueryStringValueProvider.ExampleApp.Web": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "",

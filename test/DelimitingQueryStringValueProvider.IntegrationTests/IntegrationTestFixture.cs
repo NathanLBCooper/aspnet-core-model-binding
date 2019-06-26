@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Net.Http;
-using DelimitedCollectionValueProvider.ExampleApp.Web;
+using DelimitingQueryStringValueProvider.ExampleApp.Web;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 
-namespace DelimitedCollectionValueProvider.IntegrationTests
+namespace DelimitingQueryStringValueProvider.IntegrationTests
 {
     public class IntegrationTestFixture : IDisposable
     {

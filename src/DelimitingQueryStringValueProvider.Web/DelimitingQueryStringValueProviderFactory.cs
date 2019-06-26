@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace DelimitedCollectionValueProvider
+namespace DelimitingQueryStringValueProvider.Web
 {
     public class DelimitingQueryStringValueProviderFactory : IValueProviderFactory
     {
@@ -31,7 +31,7 @@ namespace DelimitedCollectionValueProvider
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var valueProvider = new DelimitingQueryStringValueProvider(
+            var valueProvider = new Web.DelimitingQueryStringValueProvider(
                 BindingSource.Query,
                 context.ActionContext.HttpContext.Request.Query,
                 CultureInfo.InvariantCulture,

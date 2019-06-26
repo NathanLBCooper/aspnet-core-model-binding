@@ -1,5 +1,5 @@
 ﻿
-namespace DelimitedCollectionValueProvider.ExampleApp.Web
+namespace DelimitingQueryStringValueProvider.ExampleApp.Web
 {
     public class EchoCollectionRequest
     {

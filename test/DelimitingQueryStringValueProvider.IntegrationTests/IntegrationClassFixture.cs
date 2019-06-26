@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace DelimitedCollectionValueProvider.IntegrationTests
+namespace DelimitingQueryStringValueProvider.IntegrationTests
 {
     public class
         IntegrationClassFixture : IClassFixture<IntegrationTestFixture>

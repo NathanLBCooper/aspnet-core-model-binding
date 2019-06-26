@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Primitives;
 
-namespace DelimitedCollectionValueProvider
+namespace DelimitingQueryStringValueProvider.Web
 {
     public class DelimitingQueryStringValueProvider : QueryStringValueProvider
     {
