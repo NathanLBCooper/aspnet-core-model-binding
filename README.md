@@ -4,8 +4,9 @@
 
 | Package | Version |
 | --- | --- |
-| **Client** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Web.svg)](https://www.nuget.org/packages/AliasModelBinder.Web/) |
-| **Web** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Client.svg)](https://www.nuget.org/packages/AliasModelBinder.Client/) |
+| **AliasModelBinder Client** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Client.svg)](https://www.nuget.org/packages/AliasModelBinder.Client/) |
+| **AliasModelBinder Web** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Web.svg)](https://www.nuget.org/packages/AliasModelBinder.Web/) |
+| **DelimitingQueryStringValueProvider Web** | [![nuget](https://img.shields.io/nuget/v/DelimitingQueryStringValueProvider.Web.svg)](https://www.nuget.org/packages/DelimitingQueryStringValueProvider.Web/) |
 
 ![alias-model-binder](https://i.imgur.com/yrErlSX.png)
 
@@ -86,7 +87,35 @@ Now you can use both your original query and this much shorter one:
     api/controller/action?n=1&n=2&n=3&n=4&n=5&n=6&n=7&n=8&n=9&n=10
     
 Look at the ExampleApp in the `test/` folder to see a full example of an application using alias model binding.
-    
+
+
+![delimiting-query-string-value-provider](https://i.imgur.com/5Tnuab5.png)
+
+Alternatively, maybe you want to go down the path of using query strings like this instead:
+
+`api/controller/action?number=1,2,3,5,6,7,8,9,10`
+
+Then use the **DelimitingQueryStringValueProvider.Web** package instead.
+
+Add the [web package](https://www.nuget.org/packages/DelimitingQueryStringValueProvider.Web/) to your web project.
+
+Then just configure your aspnet core to use it in *Startup.cs*
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+            services
+                .AddMvc()
+                .AddMvcOptions(options =>
+                {
+                    DelimitingQueryStringValueProviderFactory.Configure(options.ValueProviderFactories);
+                });
+    }
+
+There's an extra argument to pass a custom choice of delimiter (*","* is the default). I could have passed *"_"* and had query strings like `api/controller/action?number=1_2_3` for example.
+
+Then that's it, it will work on all collections in your query strings.
+
+
 ## compatiblity
 
-The web package has a dependancy on *Microsoft.AspNetCore.Mvc.Core* version 2.2.5 (not the abstractions package *Microsoft.AspNetCore.Mvc.Abstractions*), and so is only compatible with web projects using a version of *Microsoft.AspNetCore.Mvc.Core* that's binary compatible with 2.2.5.
+All web packages have a dependancy on *Microsoft.AspNetCore.Mvc.Core* version 2.2.5 (not the abstractions package *Microsoft.AspNetCore.Mvc.Abstractions*), and so is only compatible with web projects using a version of *Microsoft.AspNetCore.Mvc.Core* that's binary compatible with 2.2.5.
