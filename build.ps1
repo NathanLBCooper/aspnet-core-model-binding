@@ -21,8 +21,10 @@ if(!$LASTEXITCODE) { dotnet restore AliasModelBinder.sln }
 if(!$LASTEXITCODE) { dotnet build AliasModelBinder.sln -c Release }
 
 if(!$LASTEXITCODE) { dotnet test --no-build --verbosity normal test\AliasModelBinder.IntegrationTests\AliasModelBinder.IntegrationTests.csproj -c Release }
+if(!$LASTEXITCODE) { dotnet test --no-build --verbosity normal test\DelimitingQueryStringValueProvider.IntegrationTests\DelimitingQueryStringValueProvider.IntegrationTests.csproj -c Release }
 
 if(!$LASTEXITCODE) { dotnet pack src\AliasModelBinder.Client\AliasModelBinder.Client.csproj --configuration RELEASE --output $OUTPUT\nupkgs /p:Version=$PACKAGEVERSION  /p:FileVersion=$VERSION /p:AssemblyVersion=$VERSION }
 if(!$LASTEXITCODE) { dotnet pack src\AliasModelBinder.Web\AliasModelBinder.Web.csproj --configuration RELEASE --output $OUTPUT\nupkgs /p:Version=$PACKAGEVERSION  /p:FileVersion=$VERSION /p:AssemblyVersion=$VERSION }
+if(!$LASTEXITCODE) { dotnet pack src\DelimitingQueryStringValueProvider.Web\DelimitingQueryStringValueProvider.Web.csproj --configuration RELEASE --output $OUTPUT\nupkgs /p:Version=$PACKAGEVERSION  /p:FileVersion=$VERSION /p:AssemblyVersion=$VERSION }
 
 exit $LASTEXITCODE
