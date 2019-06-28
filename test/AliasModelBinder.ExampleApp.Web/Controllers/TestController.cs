@@ -42,5 +42,18 @@ namespace AliasModelBinder.ExampleApp.Web.Controllers
 
             return request.LeftSummand + request.RightSummand;
         }
+
+        [HttpGet]
+        [Route("addInheritance")]
+        public ActionResult<int> AddInheritance([FromQuery] AddInheritanceDerivedRequest request)
+        {
+            if (request == null)
+            {
+                return base.BadRequest();
+            }
+
+            return request.Overridden + request.Hidden + request.AliasInDerived + request.AliasInBase
+                + request.NotOverridenWithAlias + request.NotOverriden;
+        }
     }
 }

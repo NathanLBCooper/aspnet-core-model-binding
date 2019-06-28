@@ -87,5 +87,22 @@ namespace AliasModelBinder.IntegrationTests
 
             content.Should().Be(result);
         }
+
+        [Theory]
+        [InlineData("Overridden=1&Hidden=2&AliasInDerived=3&AliasInBase=4&NotOverridenWithAlias=5&NotOverriden=6", 21)] // Can make entirely unaliased request
+        [InlineData("NotOverridenWithAliasBaseAlias=100", 100)] // using aliases on non-overriden properties
+        [InlineData("AliasInDerivedDerivedAlias=50&OverriddenDerivedAlias=49", 99)] // using aliases on overriden property defined in the derived
+        [InlineData("AliasInBaseBaseAlias=50&OverriddenBaseAlias=49", 0)] // todo using aliases on overriden property defined in the base is not allowed. Wait, what?
+        [InlineData("HiddenDerivedAlias=50", 50)] // using aliases on hidden property defined in the derived
+        [InlineData("HiddenBaseAlias=50", 0)] // using aliases on hidden property defined in the base is not allowed. The property is hidden, so the alias non allowable
+        public async Task deals_with_inheritance(string queryString, int result)
+        {
+            var response = await _client.GetAsync($"test/addInheritance?{queryString}");
+
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            var content = await response.Content.ReadAsAsync<int>();
+
+            content.Should().Be(result);
+        }
     }
 }
