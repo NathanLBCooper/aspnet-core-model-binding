@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AliasModelBinder.Client;
@@ -18,13 +19,10 @@ namespace AliasModelBinder.Web
 
         protected override Task BindProperty(ModelBindingContext bindingContext)
         {
-            var containerType = bindingContext.ModelMetadata.ContainerType;
+            var containerType = bindingContext.ModelMetadata?.ContainerType;
             if (containerType != null)
             {
-                var propertyType = containerType.GetProperty(bindingContext.ModelMetadata.PropertyName);
-                var attributes = propertyType.GetCustomAttributes(true);
-
-                var aliasAttributes = attributes.OfType<BindingAliasAttribute>().ToArray();
+                var aliasAttributes = GetAliasAttributes(containerType, bindingContext.ModelMetadata.PropertyName);
                 if (aliasAttributes.Any())
                 {
                     bindingContext.ValueProvider = new AliasValueProvider(bindingContext.ValueProvider,
@@ -33,6 +31,14 @@ namespace AliasModelBinder.Web
             }
 
             return base.BindProperty(bindingContext);
+        }
+
+        private static BindingAliasAttribute[] GetAliasAttributes(Type containerType, string propertyName)
+        {
+            var propertyType = containerType.GetProperty(propertyName);
+            var attributes = propertyType.GetCustomAttributes(true);
+
+            return attributes.OfType<BindingAliasAttribute>().ToArray();
         }
     }
 }
