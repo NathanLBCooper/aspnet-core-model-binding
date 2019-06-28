@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +12,9 @@ namespace AliasModelBinder.Web
 {
     public class AliasModelBinder : ComplexTypeModelBinder
     {
+        private static readonly string[] UnAliased = new string[0];
+        private static readonly ConcurrentDictionary<Property, string[]> Aliases = new ConcurrentDictionary<Property, string[]>();
+
         public AliasModelBinder(IDictionary<ModelMetadata, IModelBinder> propertyBinders, ILoggerFactory loggerFactory,
             bool allowValidatingTopLevelNodes)
             : base(propertyBinders, loggerFactory, allowValidatingTopLevelNodes)
@@ -22,23 +26,28 @@ namespace AliasModelBinder.Web
             var containerType = bindingContext.ModelMetadata?.ContainerType;
             if (containerType != null)
             {
-                var aliasAttributes = GetAliasAttributes(containerType, bindingContext.ModelMetadata.PropertyName);
-                if (aliasAttributes.Any())
+                var aliases = Aliases.GetOrAdd(new Property { ContainerType = containerType, Name = bindingContext.ModelMetadata.PropertyName }, GetAliases);
+
+                if (aliases.Any())
                 {
                     bindingContext.ValueProvider = new AliasValueProvider(bindingContext.ValueProvider,
-                        bindingContext.ModelName, aliasAttributes.Select(attr => attr.Alias));
+                        bindingContext.ModelName, aliases);
                 }
             }
 
             return base.BindProperty(bindingContext);
         }
 
-        private static BindingAliasAttribute[] GetAliasAttributes(Type containerType, string propertyName)
+        private static string[] GetAliases(Property property)
         {
-            var propertyType = containerType.GetProperty(propertyName);
-            var attributes = propertyType.GetCustomAttributes(true);
+            var attributes = property.ContainerType.GetProperty(property.Name).GetCustomAttributes(true).OfType<BindingAliasAttribute>();
+            return attributes.Any() ? attributes.Select(attr => attr.Alias).ToArray() : UnAliased;
+        }
 
-            return attributes.OfType<BindingAliasAttribute>().ToArray();
+        private struct Property
+        {
+            public Type ContainerType;
+            public string Name;
         }
     }
 }
