@@ -34,9 +34,7 @@ Why might you want to do this?
 
 **How do you add this to your project?**
 
-Just add [the client package](https://www.nuget.org/packages/AliasModelBinder.Client/) to where you define your request objects, and [the web package](https://www.nuget.org/packages/AliasModelBinder.Web/) to your web project.
-
-(*These two packages are seperate, because I don't want to force your client libraries to depend on ASP.NET*)
+Add [the web package](https://www.nuget.org/packages/AliasModelBinder.Web/) to your web project.
 
 Then add an attribute to your request class
 
@@ -45,7 +43,6 @@ Then add an attribute to your request class
     	[BindingAlias("n")]   // btw, this would be an awful property name. Thank goodness for the modelbinder
    		public int[] SomeNumbers{ get; set; }
 	}
-
 
 
 and configure your aspnetcore project to use the model binder in *Startup.cs*
@@ -62,6 +59,8 @@ and configure your aspnetcore project to use the model binder in *Startup.cs*
     
     
 Now you can use both your original query `api/controller/action?someNumbers=1&someNumbers=2&someNumbers=3&someNumbers=4&someNumbers=5`as well as `api/controller/action?n=1&n=2&n=3&n=4&n=5`.
+    
+Optionally, if you want to define attributes in your client project, you can take [the client package](https://www.nuget.org/packages/AliasModelBinder.Client/), which contains just the attribute definitions and has no dependencies. If you're happy to (re)define your objects with the attributes in your web project, you don't need this package.
     
 Look at the *AliasModelBinder.ExampleApp* in the `test/` folder to see a full example of an application using alias model binding.
 
