@@ -4,6 +4,7 @@ Containing the **Alias model binder** and **Delimiting Query String Value Provid
 
 [![Build status](https://ci.appveyor.com/api/projects/status/im76pxbt2kk793o0?svg=true)](https://ci.appveyor.com/project/NathanLBCooper/alias-model-binder)
 ![GitHub](https://img.shields.io/github/license/NathanLBCooper/alias-model-binder.svg)
+[![Join the chat at https://gitter.im/aspnet-core-model-binding/community](https://badges.gitter.im/aspnet-core-model-binding/community.svg)](https://gitter.im/aspnet-core-model-binding/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 | Package | Version |
 | --- | --- |
