@@ -9,7 +9,7 @@ Containing the **Alias model binder** and **Delimiting Query String Value Provid
 | --- | --- |
 | **AliasModelBinder Client** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Client.svg)](https://www.nuget.org/packages/AliasModelBinder.Client/) |
 | **AliasModelBinder Web** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Web.svg)](https://www.nuget.org/packages/AliasModelBinder.Web/) |
-| **DelimitingQueryStringValueProvider Web** | [![nuget](https://img.shields.io/nuget/v/DelimitingQueryStringValueProvider.Web.svg)](https://www.nuget.org/packages/DelimitingQueryStringValueProvider.Web/) |
+| **DelimitingQueryStringValueProvider Web** | [![nuget](https://img.shields.io/nuget/v/DelimitingQueryStringValueProvider.Web.svg)](https://www.nuget.org/packages/DelimitingQueryStringValueProvider.Web/) [![Join the chat at https://gitter.im/aspnet-core-model-binding/community](https://badges.gitter.im/aspnet-core-model-binding/community.svg)](https://gitter.im/aspnet-core-model-binding/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) |
 
 # Alias Model Binder
 
