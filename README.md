@@ -1,7 +1,5 @@
 # aspnet-core-model-binding
 
-![alias-model-binder](https://i.imgur.com/yrErlSX.png) <img src="https://i.imgur.com/5Tnuab5.png" alt="delimiting-query-string-value-provider" width="300"/>
-
 Containing the **Alias model binder** and **Delimiting Query String Value Provider**
 
 [![Build status](https://ci.appveyor.com/api/projects/status/im76pxbt2kk793o0?svg=true)](https://ci.appveyor.com/project/NathanLBCooper/alias-model-binder)
@@ -13,7 +11,7 @@ Containing the **Alias model binder** and **Delimiting Query String Value Provid
 | **AliasModelBinder Web** | [![nuget](https://img.shields.io/nuget/v/AliasModelBinder.Web.svg)](https://www.nuget.org/packages/AliasModelBinder.Web/) |
 | **DelimitingQueryStringValueProvider Web** | [![nuget](https://img.shields.io/nuget/v/DelimitingQueryStringValueProvider.Web.svg)](https://www.nuget.org/packages/DelimitingQueryStringValueProvider.Web/) |
 
-![alias-model-binder](https://i.imgur.com/yrErlSX.png)
+# Alias Model Binder
 
 **A model binder for ASP.NET Core. Use multiple alternative property names in your query strings.**
 
@@ -65,7 +63,7 @@ Optionally, if you want to define attributes in your client project, you can tak
 Look at the *AliasModelBinder.ExampleApp* in the `test/` folder to see a full example of an application using alias model binding.
 
 
-![delimiting-query-string-value-provider](https://i.imgur.com/5Tnuab5.png)
+# Delimiting Query String Value Provider
 
 **A Value Provider for ASP.NET Core. Pass less verbose arrays in your query strings.**
 
